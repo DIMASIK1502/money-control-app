@@ -1,0 +1,17 @@
+.picker-select {
+  width: 100%;
+}
+.category-option-content {
+  display: flex;
+  align-items: center;
+  .category-color {
+    width: 12px;
+    height: 12px;
+    min-width: 6px;
+    border-radius: 8px;
+    margin-right: 8px;
+  }
+  .category-text {
+    display: block;
+  }
+}

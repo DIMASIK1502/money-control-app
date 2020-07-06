@@ -1,10 +1,19 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import {
+  configureStore,
+  combineReducers,
+  ThunkAction,
+  Action,
+} from "@reduxjs/toolkit";
+import category from "./reducers/category";
+import common from "./reducers/common";
+import expenses from "./reducers/expenses";
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: combineReducers({
+    common,
+    category,
+    expenses,
+  }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
