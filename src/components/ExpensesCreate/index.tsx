@@ -15,12 +15,13 @@ import { RootState } from "../../app/store";
 
 //d+((.|,)d+)?
 //.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+const defaultDate = moment();
 
 export default function ExpensesCreate() {
   const dispatch = useDispatch();
   const [categoryId, setCategoryId] = useState<number>();
   const [money, setMoney] = useState<number>(0);
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState(defaultDate);
 
   const onPickerChange = useCallback((value: number, options: any) => {
     setCategoryId(value);
